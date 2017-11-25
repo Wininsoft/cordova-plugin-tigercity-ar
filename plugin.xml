@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  id="cordova-plugin-tigercity-ar"
+  version="1.0.0">
+
+  <name>TigerCity AR</name>
+
+  <js-module src="www/util.js" name="TigerCityAR">
+    <clobbers target="tigerCityAR" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="TigerCityAR" >
+        <param name="android-package" value="com.tigercity.ar.Util"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/Util.java" target-dir="src/com/tigercity/ar" />
+    <source-file src="src/android/LBSAR.aar" target-dir="libs/" />
+    <framework src="src/android/build-extra.gradle" custom="true" type="gradleReference" />
+  </platform>
+
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="TigerCityAR">
+        <param name="ios-package" value="TigerCityAR"/>
+      </feature>
+    </config-file>
+  </platform>
+</plugin>
