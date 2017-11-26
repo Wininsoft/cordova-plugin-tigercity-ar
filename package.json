@@ -1,17 +1,16 @@
 {
-  "name": "cordova-plugin-qqsdk",
-  "version": "0.4.0",
-  "description": "codrova/phonegap wrapper for qq sdk",
+  "name": "cordova-plugin-tigercity-ar",
+  "version": "1.0.0",
+  "description": "大华虎城AR cordova插件",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iVanPan/Cordova_QQ.git"
+    "url": "git+https://github.com/Wininsoft/cordova-plugin-tigercity-ar.git"
   },
   "cordova": {
-    "id": "cordova-plugin-qqsdk",
+    "id": "cordova-plugin-tigercity-ar",
     "platforms": [
       "android",
       "ios"
@@ -24,17 +23,12 @@
     "cordova",
     "phonegap",
     "plugin",
-    "qqsdk",
-    "qq",
-    "Tencent",
-    "login",
-    "share",
-    "favorites"
+    "tigercity"
   ],
-  "author": "https://github.com/iVanPan",
+  "author": "https://github.com/Wininsoft",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/iVanPan/Cordova_QQ/issues"
+    "url": "https://github.com/Wininsoft/cordova-plugin-tigercity-ar/issues"
   },
-  "homepage": "https://github.com/iVanPan/Cordova_QQ"
+  "homepage": "https://github.com/Wininsoft/cordova-plugin-tigercity-ar"
 }
