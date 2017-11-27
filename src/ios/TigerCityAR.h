@@ -26,7 +26,7 @@
 @property (nonatomic,string) NSString *onBackToCordovaViewCallbackId;
 - (void)openAR:(CDVInvokedUrlCommand*)command;
 - (void)onOpenUrl:(CDVInvokedUrlCommand*) command;
-- (void)onBackToCordoaView:(CDVInvokedUrlCommand*) command;
+- (void)onBackToCordovaView:(CDVInvokedUrlCommand*) command;
 - (void) fireOpenUrl:(NSString*) url;
 - (void) fireBackToCordovaView;
 

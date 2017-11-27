@@ -25,7 +25,7 @@
         self.onOpenUrlCallbackId=command.callbackId;
     }
     
-    - (void) onBackToCordoaView:(CDVInvokedUrlCommand*) command{
+    - (void) onBackToCordovaView:(CDVInvokedUrlCommand*) command{
         AppDelegate* delegate=(AppDelegate*)[UIApplication sharedApplication].delegate;
         delegate.tigerCityARPlugin=self;
         self.onBackToCordovaViewCallbackId=command.callbackId;
@@ -39,7 +39,7 @@
 
 	- (void) fireBackToCordovaView
 	{
-	    CDVPluginResult* result=[CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:url];
+	    CDVPluginResult* result=[CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
         [self.commandDelegate sendPluginResult:result callbackId:self.onBackToCordovaViewCallbackId];
     }
 
