@@ -18,12 +18,13 @@
  */
 
 #import <Cordova/CDVPlugin.h>
+#import "AppDelegate.h"
 
 @interface TigerCityAR : CDVPlugin
 
 @property (nonatomic,string) NSString *onOpenUrlCallbackId;
 - (void)openAR:(CDVInvokedUrlCommand*)command;
-- (void)onOpenAR:(CDVInvokedUrlCommand*) command;
+- (void)onOpenUrl:(CDVInvokedUrlCommand*) command;
 - (void) fireOpenUrl:(NSString*) url;
 
 
