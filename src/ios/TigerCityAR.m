@@ -1,17 +1,32 @@
-#import "TigerCityARPlugin.h"
-#import <Cordova/CDVPlugin.h>
+#import "TigerCityAR.h"
 
-@implementation TigerCityARPlugin
-
-- (void)openAR:(CDVInvokedUrlCommand*)command
-{
-    CDVPluginResult* pluginResult = nil;
-    NSString* serverUrl = [command.arguments objectAtIndex:0];
-	NSNumber* userId = [command.arguments objectAtIndex:1];
-	NSString* serverUrl = [command.arguments objectAtIndex:2];
-
-	CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-}
+@implementation TigerCityAR
+    
+    - (void) openAR:(CDVInvokedUrlCommand*) command{
+        AppDelegate *delegate=(AppDelegate*)[UIApplication sharedApplication].delegate;
+        
+        NSString *serverUrl = [command.arguments objectAtIndex:0];
+        NSString *userId=[command.arguments objectAtIndex:1];
+        delegate.Id=[userId intValue];
+        delegate.Url=serverUrl;
+        
+        //open unity
+        [delegate showUnityWindow];
+        
+        CDVPluginResult *pluginResult=[CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    }
+    
+    - (void) onOpenUrl:(CDVInvokedUrlCommand*) command{
+        AppDelegate* delegate=(AppDelegate*)[UIApplication sharedApplication].delegate;
+        delegate.tigerCityARPlugin=self;
+        self.onOpenUrlCallbackId=command.callbackId;
+    }
+    
+    - (void) fireOpenUrl:(NSString*) url{
+    
+        CDVPluginResult* result=[CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:url];
+        [self.commandDelegate sendPluginResult:result callbackId:self.onOpenUrlCallbackId];
+    }
 
 @end

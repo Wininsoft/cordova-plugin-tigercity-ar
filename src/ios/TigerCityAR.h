@@ -22,7 +22,7 @@
 @interface TigerCityAR : CDVPlugin
 
 - (void)openAR:(CDVInvokedUrlCommand*)command;
-- (void)onOpenAR:(CDInvokedUrlCommand*) command;
+- (void)onOpenAR:(CDVInvokedUrlCommand*) command;
 - (void) fireOpenUrl:(NSString*) url;
 
 

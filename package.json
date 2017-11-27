@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-tigercity-ar",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "大华虎城AR cordova插件",
   "main": "index.js",
   "scripts": {

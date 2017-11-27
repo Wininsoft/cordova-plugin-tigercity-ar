@@ -3,6 +3,7 @@
     "",
     "\\src",
     "\\src\\android",
+    "\\src\\ios",
     "\\www"
   ],
   "PreviewInSolutionExplorer": false
