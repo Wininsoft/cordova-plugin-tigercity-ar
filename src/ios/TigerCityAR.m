@@ -7,8 +7,10 @@
         
         NSString *serverUrl = [command.arguments objectAtIndex:0];
         NSString *userId=[command.arguments objectAtIndex:1];
+        NSString *password=[command.arguments objectAtIndex:2];
         delegate.Id=[userId intValue];
         delegate.Url=serverUrl;
+        delegate.Password=password;
         
         //open unity
         [delegate showUnityWindow];
@@ -23,10 +25,22 @@
         self.onOpenUrlCallbackId=command.callbackId;
     }
     
+    - (void) onBackToCordoaView:(CDVInvokedUrlCommand*) command{
+        AppDelegate* delegate=(AppDelegate*)[UIApplication sharedApplication].delegate;
+        delegate.tigerCityARPlugin=self;
+        self.onBackToCordovaViewCallbackId=command.callbackId;
+    }
+    
     - (void) fireOpenUrl:(NSString*) url{
     
         CDVPluginResult* result=[CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:url];
         [self.commandDelegate sendPluginResult:result callbackId:self.onOpenUrlCallbackId];
+    }
+
+	- (void) fireBackToCordovaView
+	{
+	    CDVPluginResult* result=[CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:url];
+        [self.commandDelegate sendPluginResult:result callbackId:self.onBackToCordovaViewCallbackId];
     }
 
 @end
