@@ -21,6 +21,7 @@
 
 @interface TigerCityAR : CDVPlugin
 
+@property (nonatomic,string) NSString *onOpenUrlCallbackId;
 - (void)openAR:(CDVInvokedUrlCommand*)command;
 - (void)onOpenAR:(CDVInvokedUrlCommand*) command;
 - (void) fireOpenUrl:(NSString*) url;
